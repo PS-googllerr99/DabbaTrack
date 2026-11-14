@@ -1,0 +1,20 @@
+# HTTPS reverse proxy for DabbaTrack. DOMAIN comes from .env (e.g. tiffin.example.com).
+# Caddy obtains and renews the TLS certificate itself and redirects http:// to https://.
+{$DOMAIN} {
+	encode gzip
+
+	header {
+		# Browsers stay on HTTPS for a year once they've seen the site.
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+
+	# Matches the API's own 64 KB limit, with headroom.
+	request_body {
+		max_size 1MB
+	}
+
+	# Caddy replaces any client-supplied X-Forwarded-For with the real client IP,
+	# which the API trusts because TRUST_PROXY=1.
+	reverse_proxy api:8080
+}

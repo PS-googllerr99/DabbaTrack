@@ -1,0 +1,19 @@
+# Only the server files are copied (see Dockerfile); keep the build context small and secret-free.
+.git
+.gitignore
+.env
+.env.*
+*.db
+*.db-wal
+*.db-shm
+*.db.partial
+backups/
+mobile/
+tests/
+__pycache__/
+*.pyc
+*.html
+!static/*.html
+*.md
+docker-compose.yml
+Caddyfile

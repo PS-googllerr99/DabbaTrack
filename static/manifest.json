@@ -1,0 +1,17 @@
+{
+  "name": "DabbaTrack - Tiffin Service Manager",
+  "short_name": "DabbaTrack",
+  "description": "Manage tiffin diets, automatic end-date extensions, meal confirmations, and QR delivery tracking.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf3",
+  "theme_color": "#d97706",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

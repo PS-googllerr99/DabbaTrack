@@ -1,0 +1,29 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Customer data: the live database (with WAL side files) and its backups
+*.db
+*.db-wal
+*.db-shm
+*.db.partial
+backups/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Mobile (also covered by mobile/.gitignore)
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+
+# Local working notes (not published)
+FINALIZATION_REPORT.md
